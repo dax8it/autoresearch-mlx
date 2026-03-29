@@ -466,7 +466,7 @@ while True:
     mx.eval(model.parameters(), *optimizer.state)
 
     train_loss_f = float(train_loss.item())
-    if train_loss_f > 100:
+    if math.isnan(train_loss_f) or train_loss_f > 100:
         print("FAIL")
         raise SystemExit(1)
 
