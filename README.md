@@ -22,7 +22,11 @@ uv run prepare.py
 uv run train.py
 ```
 
-Then point Claude Code or another coding agent at `program.md` and let it run the loop.
+Then point Claude Code or another coding agent at `AGENT_GUIDE.md` and `program.md` and let it run the loop.
+
+If you are onboarding an autonomous coding/research agent, start here:
+- `AGENT_GUIDE.md` - repo purpose, boundaries, workflow, and success criteria
+- `HERMES_ONBOARDING.md` - more explicit instructions for a coding agent operating this repo autonomously
 
 ## What matters
 
