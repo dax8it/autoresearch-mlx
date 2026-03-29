@@ -50,6 +50,23 @@ The public `results.tsv` captures the initial hardware-local walk from the defau
 
 That result already shows the core Apple Silicon pattern: with a fixed 5-minute wall clock, smaller faster-training models can beat larger ones simply by fitting more optimizer steps into the budget.
 
+## Local smoke test (2026-03-29)
+
+A fresh local end-to-end smoke run on this machine completed successfully after cache preparation.
+
+| Metric | Value |
+|---|---:|
+| `val_bpb` | `1.833196` |
+| `training_seconds` | `301.1` |
+| `total_seconds` | `313.7` |
+| `peak_vram_mb` | `21706.2` |
+| `total_tokens_M` | `19.2` |
+| `num_steps` | `293` |
+| `num_params_M` | `11.5` |
+| `depth` | `4` |
+
+This result should be treated as an operational validation point, not as a canonical cross-machine benchmark. It confirms that the current MLX training path, cache layout, and final evaluation flow are working end-to-end on this machine.
+
 ## Longer Apple Silicon runs
 
 Longer overnight runs on the working MLX port pushed much further. The long Mac Mini test is included here because it found a meaningfully different winner stack from the Max-class machines.
